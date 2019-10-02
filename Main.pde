@@ -59,7 +59,7 @@ void mousePressed() {
 }
 
 
-/********* OTHER FUNCTIONS (Obsolete?) *********/
+/********* OTHER *********/
 
 // Start the game
 void startGame() {
