@@ -1,3 +1,7 @@
+// 0: Jeu 1
+// 1: Jeu 2
+// 2: Jeu 3
+
 void mainScreen() {
  
    if (gameScreen == 0) {

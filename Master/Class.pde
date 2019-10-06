@@ -15,11 +15,9 @@ class Bouton {
     
    void draw() {
      
-     rectHighlight = color(204);
-      
      if (MouseOver()) {
        stroke(10);
-       fill (rectHighlight);
+       fill (204);
        rect(x, y, w, h, 20);}
        else {
        fill(100);
