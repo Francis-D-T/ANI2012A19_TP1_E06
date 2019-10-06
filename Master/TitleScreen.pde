@@ -7,5 +7,4 @@ void titleScreen() {
   text("Titre", height/1.1, width/3.5);
   textSize(30);
   text("Hit SPACE to start", height/1.1, width/2);
-  
 }

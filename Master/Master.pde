@@ -1,15 +1,11 @@
-// 0: Title Screen
-// 1: Main Screen
-// 2: End Screen
+ 
 // 3: NiceEnd Screen
 
 int projectScreen = 0;
 int gameScreen = 0;
-int n = 0;
 PFont titleFont;
 
 // Bouton
-color rectHighlight;
 Bouton choix1;
 Bouton choix2;
 Bouton choix3;
