@@ -1,4 +1,6 @@
- 
+// 0: Title Screen
+// 1: Main Screen
+// 2: End Screen 
 // 3: NiceEnd Screen
 
 int projectScreen = 0;
