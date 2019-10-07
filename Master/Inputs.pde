@@ -1,30 +1,22 @@
-void keyPressed() {
-  
-  // Start the game
-  if (key == ' ') {
+  void keyPressed() {
     
-    if (projectScreen==0) {
-        fade = false;
-        startGame(); }
-      else if (projectScreen==2) {
-        resetProject(); }
-      else if (projectScreen==3) {
-        resetProject(); }
+    if (key == CODED) {
+      if (keyCode == ESC){
+     exit();
+     }
    }
-}
-
-
+ }
 /********* In Game *********/
 
 
-void mouseClicked() {
+void mouseReleased() {
   
 //Jeu1, Evenements selon le choix
   
   if (projectScreen==0) {
-        fade = true; }
+    fade = true; }
         
-  if (projectScreen==1) {
+  else if (projectScreen==1) {
     if (gameScreen==0) {
       if (choix1.MouseOver()) {
         theEnd();
@@ -71,6 +63,11 @@ void mouseClicked() {
         }
      }
    }
+   else if (projectScreen==2) {
+     resetProject(); }
+     
+   else if (projectScreen==3) {
+     resetProject(); }
 }
 
 // Start the game

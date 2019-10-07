@@ -16,11 +16,11 @@ void mainScreen() {
 // Premier choix
 void Jeu1() {
   background(0);
-  choix1 = new Bouton("Mort", 850, 350, 300, 75);
+  choix1 = new Bouton("Mort", width / 1.3, height / 1.365 , width / 6, height / 20);
   choix1.draw();
-  choix2 = new Bouton("Mort", 850, 450, 300, 75);
+  choix2 = new Bouton("Mort", width / 1.3, height / 1.25, width / 6, height / 20);
   choix2.draw();
-  choix3 = new Bouton("Ici", 850, 550, 300, 75);
+  choix3 = new Bouton("Ici", width / 1.3, height / 1.15, width / 6, height / 20);
   choix3.draw();
   
   
@@ -29,11 +29,11 @@ void Jeu1() {
 // Deuxieme choix
 void Jeu2() {
    background(50);
-  choix1 = new Bouton("Mort", 850, 350, 300, 75);
+  choix1 = new Bouton("Mort", width / 1.3, height / 1.365, width / 6, height / 20);
   choix1.draw();
-  choix2 = new Bouton("Ici", 850, 450, 300, 75);
+  choix2 = new Bouton("Ici", width / 1.3, height / 1.25, width / 6, height / 20);
   choix2.draw();
-  choix3 = new Bouton("Mort", 850, 550, 300, 75);
+  choix3 = new Bouton("Mort", width / 1.3, height / 1.15, width / 6, height / 20);
   choix3.draw();
   
 }
@@ -41,11 +41,11 @@ void Jeu2() {
 // Troisieme choix
 void Jeu3() {
    background(100);
-  choix1 = new Bouton("Mort", 850, 350, 300, 75);
+  choix1 = new Bouton("Mort", width / 1.3, height / 1.365, width / 6, height / 20);
   choix1.draw();
-  choix2 = new Bouton("Ici", 850, 450, 300, 75);
+  choix2 = new Bouton("Ici", width / 1.3, height / 1.25, width / 6, height / 20);
   choix2.draw();
-  choix3 = new Bouton("Mort", 850, 550, 300, 75);
+  choix3 = new Bouton("Mort", width / 1.3, height / 1.15, width / 6, height / 20);
   choix3.draw();
   
 }

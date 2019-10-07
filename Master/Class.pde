@@ -1,11 +1,11 @@
 class Bouton {
-  int x;
-  int y;
+  float x;
+  float y;
   int w;
   int h;
   String texte;
   
-  Bouton(String texteB, int xpos, int ypos, int widthB, int heightB) {
+  Bouton(String texteB, float xpos, float ypos, int widthB, int heightB) {
     x = xpos;
     y = ypos;
     w = widthB;

@@ -16,7 +16,7 @@ Bouton choix3;
 /********* SETUP *********/
 
 void setup() {
-  size(1280, 720);
+  fullScreen();
   smooth();
   frameRate(24);
   titleFont = createFont("Youth Power.ttf", 300);
