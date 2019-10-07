@@ -1,13 +1,16 @@
 void keyPressed() {
   
   // Start the game
-  if (key == ' ')
+  if (key == ' ') {
+    
     if (projectScreen==0) {
-      startGame(); }
+        fade = false;
+        startGame(); }
       else if (projectScreen==2) {
         resetProject(); }
       else if (projectScreen==3) {
         resetProject(); }
+   }
 }
 
 
@@ -17,7 +20,10 @@ void keyPressed() {
 void mouseClicked() {
   
 //Jeu1, Evenements selon le choix
-
+  
+  if (projectScreen==0) {
+        fade = true; }
+        
   if (projectScreen==1) {
     if (gameScreen==0) {
       if (choix1.MouseOver()) {

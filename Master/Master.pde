@@ -6,6 +6,7 @@
 int projectScreen = 0;
 int gameScreen = 0;
 PFont titleFont;
+boolean fade = false;
 
 // Bouton
 Bouton choix1;
@@ -17,6 +18,7 @@ Bouton choix3;
 void setup() {
   size(1280, 720);
   smooth();
+  frameRate(24);
   titleFont = createFont("Youth Power.ttf", 300);
 }
 
