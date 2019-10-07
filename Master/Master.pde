@@ -7,6 +7,7 @@ int projectScreen = 0;
 int gameScreen = 0;
 PFont titleFont;
 boolean fade = false;
+float start, runtime;
 
 // Bouton
 Bouton choix1;
@@ -16,10 +17,11 @@ Bouton choix3;
 /********* SETUP *********/
 
 void setup() {
-  fullScreen();
+  fullScreen(2);
   smooth();
   frameRate(24);
-  titleFont = createFont("Youth Power.ttf", 300);
+  start = millis();
+  titleFont = createFont("Youth Power.ttf", 300); 
 }
 
 
@@ -28,12 +30,11 @@ void setup() {
 void draw() {
 
   if (projectScreen == 0) {
-    titleScreen();
-  } else if (projectScreen == 1) {
-    mainScreen();
-  } else if (projectScreen == 2) {
-    endScreen();
-  } else if (projectScreen == 3) {
-    niceEndScreen();
-  }
+    titleScreen(); } 
+    else if (projectScreen == 1) {
+    mainScreen(); } 
+    else if (projectScreen == 2) {
+    endScreen(); } 
+    else if (projectScreen == 3) {
+    niceEndScreen(); }
 }

@@ -1,10 +1,14 @@
 void titleScreen() {
 
-  if(fade){
-    fill(0, 40);
+  if(fade) {
+    fill(0, 60);
     rect(0, 0, width, height);
-
-  }else{
+    runtime = millis() - start;
+    if (runtime > 800) {
+      startGame();
+      fade = false; }
+  }
+  else {
     fill(65, 17, 94);
     rect(0, 0, width, height);
     textFont(titleFont);
@@ -16,6 +20,5 @@ void titleScreen() {
     fill(255);
     textAlign(CENTER);
     textSize((width + height) / 100);
-    text("Click to start",  width / 2, height / 1.1);
-  } 
+    text("Click to start",  width / 2, height / 1.1); } 
 }
