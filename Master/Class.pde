@@ -15,17 +15,25 @@ class Bouton {
   void draw() {
      
     if (MouseOver()) {
-      stroke(10);
-      fill (204);
-      rect(x, y, w, h, 20); }
+      stroke(10, 20);
+      fill (50, 25, 65);
+      rect(x, y, w, h, 20);
+      
+      textAlign(CENTER, CENTER);
+      textSize(30);
+      stroke(10, 20);
+      fill(255, 80);
+      text(texte, x + (w / 2), y + (h / 2)); }
+      
       else {
-      fill(100);
-      stroke(10);
+      stroke(10, 20);
+      fill(40, 25, 35, 20);
       rect(x, y, w, h, 20); }
        
       textAlign(CENTER, CENTER);
       textSize(30);
-      fill(255);
+      stroke(10, 20);
+      fill(255, 80);
       text(texte, x + (w / 2), y + (h / 2)); }
    
   boolean MouseOver() {
