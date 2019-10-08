@@ -24,7 +24,6 @@ void setup() {
   titleFont = createFont("Youth Power.ttf", 300); 
 }
 
-
 /********* DRAW *********/
 
 void draw() {

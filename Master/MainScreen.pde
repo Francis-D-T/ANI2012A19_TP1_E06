@@ -16,7 +16,7 @@ void mainScreen() {
 void Jeu1() {
   
   if(fade) {
-    fill(0, 70);
+    fill(60, 70);
     rect(0, 0, width, height);
     runtime = millis() - start;
     if (runtime > 600) {
@@ -24,7 +24,8 @@ void Jeu1() {
       next(); }
   }
   else {
-    background(0);
+    fill(40, 10);
+    rect(0, 0, width, height);
     choix1 = new Bouton("Mort", width / 1.3, height / 1.365 , width / 6, height / 20);
     choix1.draw();
     choix2 = new Bouton("Mort", width / 1.3, height / 1.25, width / 6, height / 20);
@@ -37,7 +38,7 @@ void Jeu1() {
 void Jeu2() {
   
   if(fade) {
-    fill(0, 70);
+    fill(100, 70);
     rect(0, 0, width, height);
     runtime = millis() - start;
     if (runtime > 600) {
@@ -45,7 +46,8 @@ void Jeu2() {
       next2(); }
   }
   else {
-    background(10);
+    fill(60);
+    rect(0, 0, width, height);
     choix1 = new Bouton("Mort", width / 1.3, height / 1.365, width / 6, height / 20);
     choix1.draw();
     choix2 = new Bouton("Ici", width / 1.3, height / 1.25, width / 6, height / 20);
@@ -58,7 +60,7 @@ void Jeu2() {
 void Jeu3() {
   
   if(fade) {
-    fill(0, 70);
+    fill(220, 80);
     rect(0, 0, width, height);
     runtime = millis() - start;
     if (runtime > 600) {
@@ -66,7 +68,8 @@ void Jeu3() {
       win(); }
   }
   else {
-    background(20);
+    fill(100);
+    rect(0, 0, width, height);
     choix1 = new Bouton("Mort", width / 1.3, height / 1.365, width / 6, height / 20);
     choix1.draw();
     choix2 = new Bouton("Ici", width / 1.3, height / 1.25, width / 6, height / 20);

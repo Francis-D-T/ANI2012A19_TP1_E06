@@ -1,7 +1,8 @@
 void niceEndScreen() {
-  background(255);
+  fill(255, 10);
+  rect(0, 0, width, height);
   textFont(titleFont);
-  fill(0);
+  fill(0, 40);
   textAlign(CENTER);
   textSize((width + height) / 10);
   text("End", width /  2, height / 2.5);
