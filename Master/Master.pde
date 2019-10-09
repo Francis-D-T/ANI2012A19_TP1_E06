@@ -8,6 +8,7 @@ int gameScreen = 0;
 PFont titleFont;
 boolean fade = false;
 float start, runtime;
+PImage imgJeu1, imgPro;
 
 // Bouton
 Bouton choix1;
@@ -17,11 +18,13 @@ Bouton choix3;
 /********* SETUP *********/
 
 void setup() {
-  fullScreen(2);
+  fullScreen();
   smooth();
-  frameRate(24);
+  frameRate(12);
   start = millis();
   titleFont = createFont("Youth Power.ttf", 300); 
+  imgJeu1 = loadImage("Jeu1.PNG");
+  imgPro = loadImage("Protagoniste.png");
 }
 
 /********* DRAW *********/

@@ -27,7 +27,7 @@ class Bouton {
       
       else {
       stroke(10, 20);
-      fill(40, 25, 35, 20);
+      fill(50, 25, 45, 20);
       rect(x, y, w, h, 20); }
        
       textAlign(CENTER, CENTER);

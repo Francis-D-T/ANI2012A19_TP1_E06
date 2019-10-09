@@ -1,10 +1,10 @@
 void titleScreen() {
 
   if(fade) {
-    fill(0, 60);
+    fill(0, 70);
     rect(0, 0, width, height);
     runtime = millis() - start;
-    if (runtime > 800) {
+    if (runtime > 900) {
       startGame();
       fade = false; }
   }
