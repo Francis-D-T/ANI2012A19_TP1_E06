@@ -25,14 +25,14 @@ void Jeu1() {
   }
   else {
 
-    choix1 = new Bouton("Mort", width / 1.3, height / 1.365 , width / 6, height / 20);
-    choix1.draw();
-    choix2 = new Bouton("Mort", width / 1.3, height / 1.25, width / 6, height / 20);
-    choix2.draw();
-    choix3 = new Bouton("Ici", width / 1.3, height / 1.15, width / 6, height / 20);
-    choix3.draw(); } 
     
-    tint(255, 120);
+    if (skipStatut == 1 || skipStatut == 2) {
+      skip.draw(); }
+    j1Choix1.draw();
+    j1Choix2.draw();
+    j1Choix3.draw(); } 
+    
+    tint(255, 150);
     image(imgJeu1, 0, 0, width, height);
     tint(255, 255);
     image(imgPro, 0, 0, width, height);
@@ -50,14 +50,15 @@ void Jeu2() {
       next2(); }
   }
   else {
+    
+    if (skipStatut == 2) {
+      skip.draw(); }
+    j2Choix1.draw();
+    j2Choix2.draw();
+    j2Choix3.draw(); 
+  
     tint(255, 120);
-    image(imgJeu1, 0, 0, width, height);
-    choix1 = new Bouton("Mort", width / 1.3, height / 1.365, width / 6, height / 20);
-    choix1.draw();
-    choix2 = new Bouton("Ici", width / 1.3, height / 1.25, width / 6, height / 20);
-    choix2.draw();
-    choix3 = new Bouton("Mort", width / 1.3, height / 1.15, width / 6, height / 20);
-    choix3.draw(); }
+    image(imgJeu1, 0, 0, width, height); }
 }
 
 // Troisieme choix
@@ -72,12 +73,12 @@ void Jeu3() {
       win(); }
   }
   else {
+
+   
+    j3Choix1.draw();
+    j3Choix2.draw();
+    j3Choix3.draw(); 
+  
     tint(255, 120);
-    image(imgJeu1, 0, 0, width, height);
-    choix1 = new Bouton("Mort", width / 1.3, height / 1.365, width / 6, height / 20);
-    choix1.draw();
-    choix2 = new Bouton("Ici", width / 1.3, height / 1.25, width / 6, height / 20);
-    choix2.draw();
-    choix3 = new Bouton("Mort", width / 1.3, height / 1.15, width / 6, height / 20);
-    choix3.draw(); }
+    image(imgJeu1, 0, 0, width, height);}
 }

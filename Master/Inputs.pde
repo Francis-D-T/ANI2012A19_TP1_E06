@@ -12,56 +12,70 @@ void mouseReleased() {
   
 //Jeu1, Evenements selon le choix
   
-  if (projectScreen==0) {
-    fade = true; 
-    start = millis(); 
+  if (projectScreen==0) { 
+    if (titleClickStatut == 0) {
+      titleClickStatut = 1;
+      CWAnim = true;
+      start = millis(); }
   }
         
   else if (projectScreen==1) {
     if (gameScreen==0) {
-      if (choix1.MouseOver()) {
+      if (j1Choix1.MouseOver()) {
         theEnd(); }
     
-      if (choix2.MouseOver()) {
+      if (j1Choix2.MouseOver()) {
         theEnd(); }
     
-      if (choix3.MouseOver()) {
+      if (j1Choix3.MouseOver()) {
         fade = true; 
         start = millis(); }
+      
+      if (skip.MouseOver()) {
+        skip1(); }
     }
      
 // Jeu2, Evenements selon le choix
 
     else if (gameScreen==1) {
-      if (choix1.MouseOver()) {
+      if (j2Choix1.MouseOver()) {
+        skipStatut = 1;
         theEnd(); }
       
-      if (choix2.MouseOver()) {
+      if (j2Choix2.MouseOver()) {
         fade = true; 
         start = millis(); }
           
-      if (choix3.MouseOver()) {
+      if (j2Choix3.MouseOver()) {
+        skipStatut = 1;
         theEnd(); }
+        
+      if (skip.MouseOver()) {
+        skip2(); }
       }
      
 // Jeu3, Evenements selon le choix
 
     else if (gameScreen==2) {
-      if (choix1.MouseOver()) {
+      if (j3Choix1.MouseOver()) {
+        skipStatut = 2;
         theEnd(); }
       
-      if (choix2.MouseOver()) {
+      if (j3Choix2.MouseOver()) {
         fade = true; 
         start = millis(); }
           
-      if (choix3.MouseOver()) {
+      if (j3Choix3.MouseOver()) {
+        skipStatut = 2;
         theEnd(); }
       }
   }
   else if (projectScreen==2) {
+    titleClickStatut = 0;
     resetProject(); }
      
   else if (projectScreen==3) {
+    titleClickStatut = 0;
     resetProject(); }
 }
 
@@ -90,6 +104,13 @@ void next2() {
 void win() {
   gameScreen = 0;
   projectScreen = 3; }
+  
+void skip1() {
+  gameScreen = 1; }
+  
+void skip2() {
+  gameScreen = 2; }
+  
   
 //void movieEvent(Movie m) {
 //m.read(); }
