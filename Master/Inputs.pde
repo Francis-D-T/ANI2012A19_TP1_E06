@@ -13,8 +13,8 @@ void mouseReleased() {
 //Jeu1, Evenements selon le choix
   
   if (projectScreen==0) { 
-    if (titleClickStatut == 0) {
-      titleClickStatut = 1;
+    if (titleClickStatus == 0) {
+      titleClickStatus = 1;
       CWAnim = true;
       start = millis(); }
   }
@@ -28,7 +28,7 @@ void mouseReleased() {
         theEnd(); }
     
       if (j1Choix3.MouseOver()) {
-        fade = true; 
+        fadeStatus = true; 
         start = millis(); }
       
       if (skip.MouseOver()) {
@@ -39,15 +39,15 @@ void mouseReleased() {
 
     else if (gameScreen==1) {
       if (j2Choix1.MouseOver()) {
-        skipStatut = 1;
+        skipStatus = 1;
         theEnd(); }
       
       if (j2Choix2.MouseOver()) {
-        fade = true; 
+        fadeStatus = true; 
         start = millis(); }
           
       if (j2Choix3.MouseOver()) {
-        skipStatut = 1;
+        skipStatus = 1;
         theEnd(); }
         
       if (skip.MouseOver()) {
@@ -58,24 +58,24 @@ void mouseReleased() {
 
     else if (gameScreen==2) {
       if (j3Choix1.MouseOver()) {
-        skipStatut = 2;
+        skipStatus = 2;
         theEnd(); }
       
       if (j3Choix2.MouseOver()) {
-        fade = true; 
+        fadeStatus = true; 
         start = millis(); }
           
       if (j3Choix3.MouseOver()) {
-        skipStatut = 2;
+        skipStatus = 2;
         theEnd(); }
       }
   }
   else if (projectScreen==2) {
-    titleClickStatut = 0;
+    titleClickStatus = 0;
     resetProject(); }
      
   else if (projectScreen==3) {
-    titleClickStatut = 0;
+    titleClickStatus = 0;
     resetProject(); }
 }
 
@@ -111,6 +111,11 @@ void skip1() {
 void skip2() {
   gameScreen = 2; }
   
+void fade(float decay) {
+  rectMode(CORNER);
+  noStroke();
+  fill(0, decay);
+  rect(0, 0, width, height); }
   
 //void movieEvent(Movie m) {
 //m.read(); }

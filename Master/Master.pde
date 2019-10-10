@@ -12,8 +12,8 @@ int width = 1280;
 int height = 720;
 int numFrames = 24;
 int currentFrame = 0;
-int skipStatut = 0;
-int titleClickStatut = 0;
+int skipStatus = 0;
+int titleClickStatus = 0;
 
 PFont titleFont;
 PFont texteFont;
@@ -23,7 +23,7 @@ PImage[] images = new PImage[numFrames];
 
 SoundFile musicTitre, musicEnd, musicNiceEnd, musicMain, soundCloche1, soundCloche2, soundCloche3;
 
-boolean fade = false;
+boolean fadeStatus = false;
 boolean CWAnim = false;
 
 float start, runtime;

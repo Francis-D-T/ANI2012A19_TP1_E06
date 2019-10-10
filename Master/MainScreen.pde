@@ -15,18 +15,17 @@ void mainScreen() {
 // Premier choix
 void Jeu1() {
   
-  if(fade) {
-    fill(0, 40);
-    rect(0, 0, width, height);
-    runtime = millis() - start;
+  runtime = millis() - start;
+  if(fadeStatus) {
+    fade(120);
     if (runtime > 900) {
-      fade = false;
+      fadeStatus = false;
       next(); }
   }
   else {
 
     
-    if (skipStatut == 1 || skipStatut == 2) {
+    if (skipStatus == 1 || skipStatus == 2) {
       skip.draw(); }
     j1Choix1.draw();
     j1Choix2.draw();
@@ -41,17 +40,16 @@ void Jeu1() {
 // Deuxieme choix
 void Jeu2() {
   
-  if(fade) {
-    fill(0, 40);
-    rect(0, 0, width, height);
-    runtime = millis() - start;
+  runtime = millis() - start;
+  if(fadeStatus) {
+    fade(120);
     if (runtime > 900) {
-      fade = false;
+      fadeStatus = false;
       next2(); }
   }
   else {
     
-    if (skipStatut == 2) {
+    if (skipStatus == 2) {
       skip.draw(); }
     j2Choix1.draw();
     j2Choix2.draw();
@@ -64,12 +62,11 @@ void Jeu2() {
 // Troisieme choix
 void Jeu3() {
   
-  if(fade) {
-    fill(220, 80);
-    rect(0, 0, width, height);
-    runtime = millis() - start;
+  runtime = millis() - start;
+  if(fadeStatus) {
+    fade(120);
     if (runtime > 900) {
-      fade = false;
+      fadeStatus = false;
       win(); }
   }
   else {

@@ -1,12 +1,11 @@
 void titleScreen() {
   
   runtime = (millis() - start);
-  if(fade) {
-    fill(0, 40);
-    rect(0, 0, width, height);
+  if(fadeStatus) {
+    fade(120);
       if (runtime > 2700) {
         startGame();
-        fade = false; }
+        fadeStatus = false; }
   }
   else {
     fill(65, 17, 94);
@@ -29,7 +28,7 @@ void titleScreen() {
       image(images[(currentFrame+offset) % numFrames], x, 0, width, height);
       offset+=2; 
         if (runtime > 2050) {
-        fade = true;
+        fadeStatus = true;
         CWAnim = false; }
       }
     }
