@@ -1,4 +1,5 @@
 import processing.video.*;
+import processing.sound.*;
 
 // 0: Title Screen
 // 1: Main Screen
@@ -16,8 +17,11 @@ int titleClickStatut = 0;
 
 PFont titleFont;
 PFont texteFont;
+
 PImage imgJeu1, imgPro;
 PImage[] images = new PImage[numFrames];
+
+SoundFile musicTitre, musicEnd, musicNiceEnd, musicMain, soundCloche1, soundCloche2, soundCloche3;
 
 boolean fade = false;
 boolean CWAnim = false;
@@ -44,8 +48,15 @@ void setup() {
   smooth();
   frameRate(12);
   start = millis();
+  
+  //musicTitre = new SoundFile();
+  //musicEnd = new SoundFile();
+  //musicNiceEnd = new SoundFile();
+  //musicMain = new SoundFile();
+  
   titleFont = createFont("Youth Power.ttf", 300);
   texteFont = createFont("darkages.ttf", 300); 
+  
   imgJeu1 = loadImage("Jeu1.PNG");
   imgPro = loadImage("Protagoniste.png");
   //catWalk = new Movie(this, "CatWalk.avi");
