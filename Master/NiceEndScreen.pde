@@ -1,10 +1,11 @@
 void niceEndScreen() {
-  background(255);
-  textSize(130);
+  fill(255, 10);
+  rect(0, 0, width, height);
   textFont(titleFont);
-  fill(0);
+  fill(0, 40);
   textAlign(CENTER);
-  text("End", height / 1.15, width / 3.5);
-  textSize(30);
-  text("Hit SPACE for TitleScreen", height/1.15, width/2);
+  textSize((width + height) / 10);
+  text("End", width /  2, height / 2.5);
+  textSize((width + height) / 100);
+  text("Click for TitleScreen", width / 2, height / 1.1);
 }
