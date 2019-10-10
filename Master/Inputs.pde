@@ -14,7 +14,8 @@ void mouseReleased() {
   
   if (projectScreen==0) {
     fade = true; 
-    start = millis(); }
+    start = millis(); 
+  }
         
   else if (projectScreen==1) {
     if (gameScreen==0) {
@@ -89,3 +90,7 @@ void next2() {
 void win() {
   gameScreen = 0;
   projectScreen = 3; }
+  
+//void movieEvent(Movie m) {
+//m.read(); }
+//image(catWalk, 0, 0, width, height);
