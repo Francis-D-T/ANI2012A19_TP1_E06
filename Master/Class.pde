@@ -19,6 +19,7 @@ class Bouton {
       fill (50, 25, 65);
       rect(x, y, w, h, 20);
       
+      textFont(texteFont);
       textAlign(CENTER, CENTER);
       textSize(30);
       stroke(10, 20);
@@ -29,7 +30,8 @@ class Bouton {
       stroke(10, 20);
       fill(50, 25, 45, 20);
       rect(x, y, w, h, 20); }
-       
+      
+      textFont(texteFont);
       textAlign(CENTER, CENTER);
       textSize(30);
       stroke(10, 20);
