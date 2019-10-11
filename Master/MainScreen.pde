@@ -31,7 +31,7 @@ void Jeu1() {
     j1Choix2.draw();
     j1Choix3.draw(); } 
     
-    tint(255, 150);
+    tint(255, 120);
     image(imgJeu1, 0, 0, width, height);
     tint(255, 255);
     image(imgPro, 0, 0, width, height);
