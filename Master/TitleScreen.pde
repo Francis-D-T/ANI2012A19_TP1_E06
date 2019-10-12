@@ -3,7 +3,7 @@ void titleScreen() {
   runtime = (millis() - start);
   if(fadeStatus) {
     fade(120);
-      if (runtime > 2700) {
+      if (runtime > 2800) {
         startGame();
         fadeStatus = false; }
   }
@@ -27,7 +27,7 @@ void titleScreen() {
       for (int x = 0; x < width; x += images[0].width) { 
       image(images[(currentFrame+offset) % numFrames], x, 0, width, height);
       offset+=2; 
-        if (runtime > 2050) {
+        if (runtime > 2400) {
         fadeStatus = true;
         CWAnim = false; }
       }

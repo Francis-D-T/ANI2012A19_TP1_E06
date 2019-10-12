@@ -14,6 +14,7 @@ void mouseReleased() {
   
   if (projectScreen==0) { 
     if (titleClickStatus == 0) {
+      currentFrame = 0;
       titleClickStatus = 1;
       CWAnim = true;
       start = millis(); }
