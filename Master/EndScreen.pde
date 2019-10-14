@@ -1,5 +1,5 @@
 void endScreen() {
-  fill(0, 40);
+  fill(0, 60);
   rect(0, 0, width, height);
   textFont(titleFont);
   fill(255, 140);
