@@ -1,15 +1,9 @@
-class Bouton {
-  float x;
-  float y;
-  int w;
-  int h;
+class Bouton extends PianoNotes{
+  
   String texte;
   
-  Bouton(String texteB, float xpos, float ypos, int widthB, int heightB) {
-    x = xpos;
-    y = ypos;
-    w = widthB;
-    h = heightB;
+  Bouton(String texteB, float x, float y, int w, int h) {
+    super(x, y, w, h);
     texte = texteB; }
     
   void draw() {
@@ -37,7 +31,30 @@ class Bouton {
       stroke(10, 20);
       fill(255, 80);
       text(texte, x + (w / 2), y + (h / 2)); }
-   
+}
+
+/*************            **************/
+
+class PianoNotes {
+  
+  float x;
+  float y;
+  int w;
+  int h;
+  
+  PianoNotes(float xpos, float ypos, int widthC, int heightC) {
+    x = xpos;
+    y = ypos;
+    w = widthC;
+    h = heightC;
+   }
+    
+  void draw() {
+     
+    if (MouseOver()) {
+      cursor(HAND); }
+  }
+  
   boolean MouseOver() {
     if (mouseX > x && mouseX < (x + w) && mouseY > y && mouseY < (y + h)) {
       return true; }

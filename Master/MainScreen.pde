@@ -1,6 +1,7 @@
 // 0: Jeu 1
 // 1: Jeu 2
 // 2: Jeu 3
+// 3: Cloches
 
 void mainScreen() {
  
@@ -10,6 +11,8 @@ void mainScreen() {
     Jeu2(); } 
     else if (gameScreen == 2) {
     Jeu3(); }
+    else if (gameScreen == 3) {
+      Piano(); }
 }
 
 // Premier choix
@@ -77,5 +80,18 @@ void Jeu3() {
     j3Choix3.draw(); 
   
     tint(255, 120);
-    image(imgJeu1, 0, 0, width, height);}
+    image(imgJeu1, 0, 0, width, height); }
+}
+    
+// Cloches
+void Piano() {
+  
+  runtime = millis() - start;
+  if(PianoStatus) {
+    theEnd(); }
+    
+  else {
+    
+    tint(255, 255);
+    image(imgPro, 0, 0, width, height); }
 }
