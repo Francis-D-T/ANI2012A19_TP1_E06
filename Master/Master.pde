@@ -23,7 +23,7 @@ PImage imgJeu1, imgPro;
 PImage[] images = new PImage[numFrames];
 
 SoundFile musicTitre,musicEnd, musicNiceEnd, musicMain,
-Do, Re, Mi, Fa, Sol, La, Si, DO;
+Do, Re, Mi, Fa, Sol, La, Si, Do2;
 
 boolean fadeStatus = false;
 boolean CWAnim = false;
@@ -75,7 +75,7 @@ void setup() {
   Sol = new SoundFile(this, "do-stretched.wav");
   La = new SoundFile(this, "do-stretched.wav");
   Si = new SoundFile(this, "do-stretched.wav");
-  DO = new SoundFile(this, "do-stretched.wav");
+  Do2 = new SoundFile(this, "do-stretched.wav");
     
 // Jeu1
   j1Choix1 = new Bouton("Jouer avec la cloche", width / 1.5, height / 1.465 , width / 3, height / 20);
