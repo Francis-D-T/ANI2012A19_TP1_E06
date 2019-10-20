@@ -23,7 +23,7 @@ void mouseReleased() {
   else if (projectScreen==1) {
     if (gameScreen==0) {
       if (j1Choix1.MouseOver()) {
-        theEnd(); }
+        pianoPlay(); }
     
       if (j1Choix2.MouseOver()) {
         theEnd(); }
@@ -70,7 +70,30 @@ void mouseReleased() {
         skipStatus = 2;
         theEnd(); }
       }
-  }
+      
+// Cloches, Evennements
+
+    else if (gameScreen==3) {
+      
+      if (pianoDo.MouseOver()) 
+        Do.play();
+      if (pianoRe.MouseOver()) 
+        Re.play();
+      if (pianoMi.MouseOver()) 
+        Mi.play();
+      if (pianoFa.MouseOver()) 
+        Fa.play();
+      if (pianoSol.MouseOver()) 
+        Sol.play();
+      if (pianoLa.MouseOver()) 
+        La.play();
+      if (pianoSi.MouseOver()) 
+        Si.play();
+      if (pianoDO.MouseOver()) 
+        DO.play(); }
+    
+/*************            **************/
+
   else if (projectScreen==2) {
     titleClickStatus = 0;
     resetProject(); }
@@ -78,7 +101,10 @@ void mouseReleased() {
   else if (projectScreen==3) {
     titleClickStatus = 0;
     resetProject(); }
+  }
 }
+
+/*************            **************/
 
 // Start the game
 void startGame() {
@@ -100,6 +126,10 @@ void next() {
 // Passer au niveau 3
 void next2() {
   gameScreen = 2; }
+  
+// Cloches
+void pianoPlay() {
+  gameScreen = 3; }
 
 // En cas de Victoire
 void win() {
