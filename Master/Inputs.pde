@@ -13,17 +13,14 @@ void mouseReleased() {
 //Jeu1, Evenements selon le choix
   
   if (projectScreen==0) { 
-    if (titleClickStatus == 0) {
       currentFrame = 0;
-      titleClickStatus = 1;
       CWAnim = true;
       start = millis(); }
-  }
         
   else if (projectScreen==1) {
     if (gameScreen==0) {
-      if (j1Choix1.MouseOver()) {
-        pianoPlay(); }
+      if (j1Choix1.MouseOver()) { 
+        PianoStatus = true; }
     
       if (j1Choix2.MouseOver()) {
         theEnd(); }
@@ -33,7 +30,7 @@ void mouseReleased() {
         start = millis(); }
       
       if (skip.MouseOver()) {
-        skip1(); }
+        next(); }
     }
      
 // Jeu2, Evenements selon le choix
@@ -52,7 +49,7 @@ void mouseReleased() {
         theEnd(); }
         
       if (skip.MouseOver()) {
-        skip2(); }
+        next2(); }
       }
      
 // Jeu3, Evenements selon le choix
@@ -77,38 +74,37 @@ void mouseReleased() {
       
       if (pianoDo.MouseOver()) 
         Do.play();
-      if (pianoRe.MouseOver()) 
-        Re.play();
-      if (pianoMi.MouseOver()) 
-        Mi.play();
-      if (pianoFa.MouseOver()) 
-        Fa.play();
-      if (pianoSol.MouseOver()) 
-        Sol.play();
-      if (pianoLa.MouseOver()) 
-        La.play();
-      if (pianoSi.MouseOver()) 
-        Si.play();
-      if (pianoDO.MouseOver()) 
-        DO.play(); }
+      //if (pianoRe.MouseOver()) 
+       // Re.play();
+      //if (pianoMi.MouseOver()) 
+       // Mi.play();
+      //if (pianoFa.MouseOver()) 
+       // Fa.play();
+     // if (pianoSol.MouseOver()) 
+    //    Sol.play();
+     // if (pianoLa.MouseOver()) 
+     //   La.play();
+     // if (pianoSi.MouseOver()) 
+     //   Si.play();
+     // if (pianoDo2.MouseOver()) 
+     //   Do2.play(); 
+   }
+}
     
 /*************            **************/
 
   else if (projectScreen==2) {
-    titleClickStatus = 0;
     resetProject(); }
      
   else if (projectScreen==3) {
-    titleClickStatus = 0;
     resetProject(); }
-  }
 }
 
 /*************            **************/
 
 // Start the game
 void startGame() {
-  projectScreen = 1; }
+  projectScreen = 1; } 
   
 // Resset to title sceen
 void resetProject() {
@@ -127,27 +123,23 @@ void next() {
 void next2() {
   gameScreen = 2; }
   
-// Cloches
+// Piano
 void pianoPlay() {
-  gameScreen = 3; }
+  gameScreen = 3;  }
 
 // En cas de Victoire
 void win() {
   gameScreen = 0;
   projectScreen = 3; }
-  
-void skip1() {
-  gameScreen = 1; }
-  
-void skip2() {
-  gameScreen = 2; }
+
   
 void fade(float decay) {
   rectMode(CORNER);
   noStroke();
   fill(0, decay);
   rect(0, 0, width, height); }
-  
+ 
+    
 //void movieEvent(Movie m) {
 //m.read(); }
 //image(catWalk, 0, 0, width, height);
