@@ -6,19 +6,27 @@
 void mainScreen() {
  
    if (gameScreen == 0) {
-    Jeu1(); } 
-    else if (gameScreen == 1) {
-    Jeu2(); } 
-    else if (gameScreen == 2) {
-    Jeu3(); }
-    else if (gameScreen == 3) {
-      Piano(); }
+     Jeu1(); } 
+   else if (gameScreen == 1) {
+     Jeu2(); } 
+   else if (gameScreen == 2) {
+     Jeu3(); }
+   else if (gameScreen == 3) {
+     Piano(); }
 }
 
 // Premier choix
 void Jeu1() {
   
+  musicMain.play();
   runtime = millis() - start;
+  if(PianoStatus) {
+    fade(120);
+    if (runtime > 900) {
+      PianoStatus = false;
+      pianoPlay(); }
+  }
+
   if(fadeStatus) {
     fade(120);
     if (runtime > 900) {
@@ -37,8 +45,8 @@ void Jeu1() {
     tint(255, 120);
     image(imgJeu1, 0, 0, width, height);
     tint(255, 255);
-    image(imgPro, 0, 0, width, height);
-}
+    image(imgPro, 0, 0, width, height); }
+
 
 // Deuxieme choix
 void Jeu2() {
@@ -70,6 +78,7 @@ void Jeu3() {
     fade(120);
     if (runtime > 900) {
       fadeStatus = false;
+      skipStatus = 0;
       win(); }
   }
   else {
@@ -85,13 +94,18 @@ void Jeu3() {
     
 // Cloches
 void Piano() {
-  
   runtime = millis() - start;
+  pianoDo.draw();
+  
   if(PianoStatus) {
     theEnd(); }
     
   else {
     
+    fill(200, 110);
+    rect(0, 0, width, height);
+    
     tint(255, 255);
     image(imgPro, 0, 0, width, height); }
+    
 }

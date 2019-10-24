@@ -1,3 +1,4 @@
+
 import processing.video.*;
 import processing.sound.*;
 
@@ -13,7 +14,6 @@ int height = 720;
 int numFrames = 36;
 int currentFrame = 0;
 int skipStatus = 0;
-int titleClickStatus = 0;
 boolean PianoStatus = false;
 
 PFont titleFont;
@@ -38,7 +38,7 @@ Bouton skip;
 
 // CLoches
 PianoNotes pianoDo, pianoRe, pianoMi;
-PianoNotes pianoFa, pianoSol, pianoLa, pianoSi, pianoDO;
+PianoNotes pianoFa, pianoSol, pianoLa, pianoSi, pianoDo2;
 
 /********* SETUP *********/
 
@@ -49,11 +49,6 @@ void setup() {
   frameRate(12);
   start = millis();
   
-  //musicTitre = new SoundFile();
-  //musicEnd = new SoundFile();
-  //musicNiceEnd = new SoundFile();
-  //musicMain = new SoundFile();
- 
 // Font
   titleFont = createFont("Youth Power.ttf", 300);
   texteFont = createFont("darkages.ttf", 300); 
@@ -68,6 +63,8 @@ void setup() {
     images[i] = loadImage(imageName); }
     
 // Music import
+  //musicMain = new SoundFile(this, "");
+
   Do = new SoundFile(this, "do-stretched.wav");
   Re = new SoundFile(this, "do-stretched.wav");
   Mi = new SoundFile(this, "do-stretched.wav");
@@ -94,6 +91,9 @@ void setup() {
   
 // Skip
   skip = new Bouton("Skip", width / 1.265, height / 1.14, width / 12, height / 30);
+  
+// Piano Notes
+  pianoDo = new PianoNotes(width / 1.5, height / 1.465, width / 3, height / 20);
 }
 
 /********* DRAW *********/
