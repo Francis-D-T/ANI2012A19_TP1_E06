@@ -18,7 +18,7 @@ void mainScreen() {
 // Premier choix
 void Jeu1() {
   
-  musicMain.play();
+
   runtime = millis() - start;
   if(PianoStatus) {
     fade(120);
