@@ -11,9 +11,10 @@ int projectScreen = 0;
 int gameScreen = 0;
 int width = 1280;
 int height = 720;
-int numFrames = 36;
+int numFrames = 30;
 int currentFrame = 0;
 int skipStatus = 0;
+boolean CatWalk = true;
 boolean PianoStatus = false;
 
 PFont titleFont;
@@ -46,10 +47,11 @@ void setup() {
   size(1280, 720);
   //fullScreen();
   smooth();
-  frameRate(12);
   start = millis();
   
-// Font
+// Font & textes
+  words.add("Chat Errant");
+  nextWord(words.get(wordIndex));
   titleFont = createFont("Youth Power.ttf", 300);
   texteFont = createFont("darkages.ttf", 300); 
   

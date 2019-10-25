@@ -6,16 +6,28 @@ void keyPressed() {
   }
 }
 /********* In Game *********/
-
+void mouseDragged() {
+  if (projectScreen==0) {
+    if (mouseButton == RIGHT) {
+      for (Particle particle : particles) {
+        if (dist(particle.pos.x, particle.pos.y, mouseX, mouseY) < 50) {
+          particle.kill();
+        }
+      }
+    }
+  }
+}
 
 void mouseReleased() {
   
 //Jeu1, Evenements selon le choix
-  
+ if (mouseButton == LEFT) { 
   if (projectScreen==0) { 
-      currentFrame = 0;
+    if (CatWalk) {
       CWAnim = true;
+      currentFrame = 0;
       start = millis(); }
+  }
         
   else if (projectScreen==1) {
     if (gameScreen==0) {
@@ -98,8 +110,8 @@ void mouseReleased() {
      
   else if (projectScreen==3) {
     resetProject(); }
+  }
 }
-
 /*************            **************/
 
 // Start the game
@@ -108,6 +120,11 @@ void startGame() {
   
 // Resset to title sceen
 void resetProject() {
+  wordIndex += 1;
+    if (wordIndex > words.size()-1) { 
+      wordIndex = 0;
+    }
+  nextWord(words.get(wordIndex));
   projectScreen = 0; }
 
 // En cas de mauvaise reponse
