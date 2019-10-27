@@ -4,7 +4,7 @@ class Bouton extends PianoNotes{
   
   String texte;
   
-  Bouton(String texteB, float x, float y, int w, int h) {
+  Bouton(String texteB, float x, float y, float w, float h) {
     super(x, y, w, h);
     texte = texteB; }
     
@@ -40,15 +40,44 @@ class Bouton extends PianoNotes{
 }
 
 /*************            **************/
+class PianoNotesNoires extends PianoNotes {
+  
+  float r;
+  float r2;
+  float r3;
+  float r4;
+  
+  PianoNotesNoires(float x, float y, float w, float h, float round, float round2, float round3, float round4) {
+    super(x, y, w, h);
+    r = round;
+    r2 = round2;
+    r3 = round3;
+    r4 = round4;}
+    
+  void draw() {
+    
+     if (MouseOver()) {
+       strokeWeight(5);
+       stroke(20);
+       fill (10);
+       rect(x, y, w, h, r, r2, r3, r4); }
 
-class PianoNotes {
+     else {
+       strokeWeight(5);
+       stroke(10);
+       fill(0);
+       rect(x, y, w, h, r, r2, r3, r4); }
+   }
+}
+
+    class PianoNotes {
   
   float x;
   float y;
-  int w;
-  int h;
+  float w;
+  float h;
   
-  PianoNotes(float xpos, float ypos, int widthC, int heightC) {
+  PianoNotes(float xpos, float ypos, float widthC, float heightC) {
     x = xpos;
     y = ypos;
     w = widthC;
@@ -63,12 +92,16 @@ class PianoNotes {
    void draw() {
      
      if (MouseOver()) {
-       stroke(10, 20);
-       fill (255);
+       strokeWeight(7);
+       stroke(240);
+       fill (250);
        rect(x, y, w, h); }
-
- 
-   }
+     else {
+       strokeWeight(7);
+       stroke(230);
+       fill(255);
+       rect(x, y, w, h); }
+  }
 }
 
 
@@ -174,10 +207,9 @@ void nextWord(String word) {
   // Draw word in memory
   PGraphics pg = createGraphics(width, height);
   pg.beginDraw();
-  pg.fill(0);
-  pg.textAlign(CENTER);
   titleFont = createFont("Youth Power.ttf", 300);
   pg.textFont(titleFont);
+  pg.textAlign(CENTER);
   pg.textSize(height/4);
   pg.text(word, width/2, height/2.5);
   pg.endDraw();
@@ -245,9 +277,4 @@ void nextWord(String word) {
       particle.kill();
     }
   }
-}
-
-
-
-    
-    
+} 

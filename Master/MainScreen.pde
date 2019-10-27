@@ -44,9 +44,10 @@ void Jeu1() {
     
     tint(255, 120);
     image(imgJeu1, 0, 0, width, height);
+    
     tint(255, 255);
     image(imgPro, 0, 0, width, height); }
-
+    
 
 // Deuxieme choix
 void Jeu2() {
@@ -95,17 +96,48 @@ void Jeu3() {
 // Cloches
 void Piano() {
   runtime = millis() - start;
-  pianoDo.draw();
   
+  pianoC3.draw();
+  pianoD3.draw();
+  pianoE3.draw();
+  pianoF3.draw();
+  pianoG3.draw();
+  pianoA3.draw();
+  pianoB3.draw();
+  pianoC4.draw();
+    pianoDb3.draw();
+    pianoEb3.draw();
+    pianoGb3.draw();
+    pianoAb3.draw();
+    pianoBb3.draw();
+    pianoDb4.draw();
+
+  
+ 
   if(PianoStatus) {
     theEnd(); }
     
   else {
+    noStroke();
+    fill(0);
+    rect(0, 0, width, height / 4);
     
-    fill(200, 110);
-    rect(0, 0, width, height);
+    final int w = width *2, h = height / 10;
+    final int cx = w >> 10, cy = h >> 1;
+    final int step = 1;
+  
+    for (int i = 0; i <= w; i += step) {
+      fill( map(i, 0, w, 0, 50) );
+      ellipse(cx, cy, w - i, h);
+    }
     
-    tint(255, 255);
-    image(imgPro, 0, 0, width, height); }
+    tint(255, 150);
+    image(imgPianoLogo, -100, -300);
+
     
+    strokeWeight(20);
+    strokeCap(SQUARE);
+    stroke(193, 6, 6, 150);
+    line(0, 180, 1280, 180);
+  }
 }

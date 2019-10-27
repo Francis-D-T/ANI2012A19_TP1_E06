@@ -38,9 +38,10 @@ void titleScreen() {
       for (int x = 0; x < width; x += images[0].width) { 
       image(images[(currentFrame+offset) % numFrames], x, 0, width, height);
       offset+=2; 
-        if (runtime > 1600) {
+        if (runtime > 1400) {
           fadeStatus = true;
-          CWAnim = false; }
+          CWAnim = false;
+          CatWalk = true; }
        }
     }
   }  
