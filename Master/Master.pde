@@ -8,7 +8,6 @@
 // Image Piano: https://www.merriammusic.com/pianos/
 
 
-
 import processing.video.*;
 import processing.sound.*;
 
