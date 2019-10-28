@@ -1,6 +1,11 @@
 // Piano Sound files : http://theremin.music.uiowa.edu/MISpiano.html
 // Texte Particule :  https://www.openprocessing.org/sketch/377231/
 // Julia Sets : https://github.com/CodingTrain/website/blob/master/CodingChallenges/CC_022_JuliaSet/Processing/CC_022_JuliaSet/CC_022_JuliaSet.pde
+// Sound: soundbible.com
+// Sound: https://offers.adobe.com/en/na/audition/offers/audition_dlc.html
+// Video: https://www.videvo.net/free-motion-graphics/
+// Image Background: https://fr.vecteezy.com/art-vectoriel/93757-vecteur-de-fond-jaune-bokeh
+// Image Piano: https://www.merriammusic.com/pianos/
 
 
 import processing.video.*;
@@ -15,26 +20,28 @@ int projectScreen = 0;
 int gameScreen = 0;
 int width = 1280;
 int height = 720;
-int numFrames = 40;
+int numFrames = 30;
 int currentFrame = 0;
 int skipStatus = 0;
+
+Movie EndMovie;
+
 boolean CatWalk = true;
 boolean PianoStatus = false;
 boolean doOnce = true;
 boolean doOnceD = true;
-
+boolean Drag = false;
+boolean fadeStatus = false;
+boolean CWAnim = false;
 
 PFont titleFont;
 PFont texteFont;
 
-PImage imgJeu1, imgPro, imgPianoLogo;
+PImage imgJeu1, imgJeu2, imgJeu3, imgPro, imgPianoLogo, imaTitre;
 PImage[] images = new PImage[numFrames];
 
-SoundFile musicTitre,musicEnd, musicNiceEnd, musicMain,
+SoundFile musicTitre,musicEnd, musicNiceEnd, musicMain, musicMain2, Yhea,
 C3, Db3, D3, Eb3, E3, F3, Gb3, G3, Ab3, A3, Bb3, B3, C4, Db4;
-
-boolean fadeStatus = false;
-boolean CWAnim = false;
 
 float start, runtime;
 
@@ -42,7 +49,7 @@ float start, runtime;
 Bouton j1Choix1, j1Choix2, j1Choix3, j2Choix1; 
 Bouton j2Choix2, j2Choix3, j3Choix1, j3Choix2, j3Choix3;
 
-Bouton skip;
+Bouton skip, PianoQ;
 
 // CLoches
 PianoNotes pianoC3, pianoD3, pianoE3, pianoF3, pianoG3, pianoA3, pianoB3, pianoC4;
@@ -64,9 +71,13 @@ void setup() {
   
 // Image et Sequences
   imgJeu1 = loadImage("Jeu1.PNG");
+  imgJeu2 = loadImage("Jeu2.png");
+  imgJeu3 = loadImage("Jeu3.png");
+  imaTitre = loadImage("TitreBackground.png");
+  imaTitre.resize(width, height);
   imgPro = loadImage("Protagoniste.png");
   imgPianoLogo = loadImage("pianoLogo.png");
-  imgPianoLogo.resize(200, 400);
+  imgPianoLogo.resize(width / 5, height / 2);
   //catWalk = new Movie(this, "CatWalk.avi");
   //catWalk.play();
   for (int i = 0; i < numFrames; i++) {
@@ -74,7 +85,10 @@ void setup() {
     images[i] = loadImage(imageName); }
     
 // Music import
-  //musicMain = new SoundFile(this, "");
+  musicMain = new SoundFile(this, "Ambience Storm Light 01.aif");
+  musicMain2 = new SoundFile(this, "Ambience Court House Entrance 01.aif");
+  musicNiceEnd = new SoundFile(this, "Purring.wav");
+  Yhea = new SoundFile(this, "cheering.aif");
 
   C3 = new SoundFile(this, "Piano.ff.C3.aif");
   Db3 = new SoundFile(this, "Piano.ff.Db3.aif");
@@ -91,23 +105,28 @@ void setup() {
   C4 = new SoundFile(this, "Piano.ff.C4.aif");
   Db4 = new SoundFile(this, "Piano.ff.Db4.aif");
     
+// Movie
+  EndMovie = new Movie(this, "HoneycombMosaic.mov");
+  EndMovie.loop();
+  
 // Jeu1
-  j1Choix1 = new Bouton("Jouer avec la cloche", width / 1.5, height / 1.465 , width / 3, height / 20);
+  j1Choix1 = new Bouton("Jouer au piano", width / 1.5, height / 1.465 , width / 3, height / 20);
   j1Choix2 = new Bouton("Continuer son chemin", width / 1.5, height / 1.35, width / 3, height / 20);
   j1Choix3 = new Bouton("Entre par la porte", width / 1.5, height / 1.25, width / 3, height / 20);
   
 // Jeu2
   j2Choix1 = new Bouton("faire demi tour", width / 1.5, height / 1.465, width / 3, height / 20);
-  j2Choix2 = new Bouton("Vers la lumiere", width / 1.5, height / 1.35, width / 3, height / 20);
+  j2Choix2 = new Bouton("Aller vers la lumiere", width / 1.5, height / 1.35, width / 3, height / 20);
   j2Choix3 = new Bouton("Monter a l'etage", width / 1.5, height / 1.25, width / 3, height / 20);
     
 // Jeu3
   j3Choix1 = new Bouton("Manger le poisson", width / 1.5, height / 1.465, width / 3, height / 20);
   j3Choix2 = new Bouton("Manger le poulet", width / 1.5, height / 1.35, width / 3, height / 20);
-  j3Choix3 = new Bouton("Faire demi tour", width / 1.5, height / 1.25, width / 3, height / 20);
+  j3Choix3 = new Bouton("Ne rien toucher", width / 1.5, height / 1.25, width / 3, height / 20);
   
 // Skip
   skip = new Bouton("Skip", width / 1.265, height / 1.14, width / 12, height / 30);
+  PianoQ = new Bouton("Continuer", width / 1.2, height / 35, width / 6.5, height / 20);
   
 // Piano Notes
   pianoC3 = new PianoNotes(0, height / 4, width / 8, height / 1.2);
