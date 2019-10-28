@@ -1,5 +1,6 @@
-// http://theremin.music.uiowa.edu/MISpiano.html
-// Te3xte Particule :  https://www.openprocessing.org/sketch/377231/
+// Piano Sound files : http://theremin.music.uiowa.edu/MISpiano.html
+// Texte Particule :  https://www.openprocessing.org/sketch/377231/
+// Julia Sets : https://github.com/CodingTrain/website/blob/master/CodingChallenges/CC_022_JuliaSet/Processing/CC_022_JuliaSet/CC_022_JuliaSet.pde
 // Sound: soundbible.com
 // Sound: https://offers.adobe.com/en/na/audition/offers/audition_dlc.html
 // Video: https://www.videvo.net/free-motion-graphics/
