@@ -135,7 +135,7 @@ void Piano() {
     if (runtime > 800) {
       musicMain.amp(0.15);
       PianoStatus = false;
-      next(); }
+      gameScreen = 0; }
     }
     
     
